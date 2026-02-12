@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Kontakt & Rezervace | Šnytárna Ostrava</title>
+    <meta
+      name="description"
+      content="Kontakt a rezervace v pivnici Šnytárna v centru Ostravy. Otevírací doba, adresa, mapa a rezervační formulář."
+    />
+    <meta name="author" content="Šnytárna" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://snytarna.cz/kontakt.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta
+      property="og:title"
+      content="Kontakt & Rezervace | Šnytárna Ostrava"
+    />
+    <meta
+      property="og:description"
+      content="Otevírací doba, adresa, mapa a rezervace stolu v pivnici Šnytárna v centru Ostravy."
+    />
+    <meta property="og:url" content="https://snytarna.cz/kontakt.html" />
+    <meta property="og:site_name" content="Šnytárna" />
+    <meta
+      property="og:image"
+      content="https://snytarna.cz/images/og-snytarna.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Šnytárna – kontakt a rezervace" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kontakt & Rezervace | Šnytárna" />
+    <meta
+      name="twitter:description"
+      content="Kontakt, otevírací doba, mapa a rezervace stolu v pivnici Šnytárna v centru Ostravy."
+    />
+    <meta
+      name="twitter:image"
+      content="https://snytarna.cz/images/og-snytarna.jpg"
+    />
+
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/icofont.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <script src="main.js" defer></script>
+    <script src="js/kontakt.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Přeskočit na obsah</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Šnytárna - domů">
+          <img
+            src="images/snytarna-logo-nav.svg"
+            alt="Šnytárna"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+
+        <nav class="nav" aria-label="Hlavní navigace">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            aria-label="Otevřít menu"
+          >
+            <span class="nav-toggle__bar" aria-hidden="true"></span>
+            <span class="nav-toggle__bar" aria-hidden="true"></span>
+            <span class="nav-toggle__bar" aria-hidden="true"></span>
+          </button>
+
+          <ul id="nav-menu" class="nav-list">
+            <li><a class="nav-link" href="/">Úvod</a></li>
+            <li><a class="nav-link" href="/menu.html">Menu</a></li>
+            <li><a class="nav-link" href="/galerie.html">Galerie</a></li>
+            <li>
+              <a
+                class="nav-link is-active"
+                href="/kontakt.html"
+                aria-current="page"
+                >Kontakt</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="nav-overlay" hidden></div>
+        <div class="header-cta">
+          <a
+            class="cta-phone"
+            href="tel:+420725724242"
+            aria-label="Zavolat do Šnytárny"
+          >
+            +420 725 724 242
+          </a>
+          <a class="btn btn-primary" href="#rezervace">Rezervace</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="contact-hero">
+        <div class="container">
+          <p class="contact-kicker">Kontakt &amp; rezervace</p>
+          <h1 class="contact-page-title">Kde nás najdeš</h1>
+
+          <div class="contact-quick">
+            <a class="contact-quick-link" href="tel:+420725724242"
+              >+420 725 724 242</a
+            >
+            <span class="contact-sep" aria-hidden="true">•</span>
+            <a class="contact-quick-link" href="mailto:snytarna.ofsit@gmail.com"
+              >snytarna.ofsit@gmail.com</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-main">
+        <div class="container contact-grid">
+          <section class="contact-block" aria-labelledby="open-hours">
+            <h2 id="open-hours" class="contact-h2">Otevírací doba</h2>
+            <div class="contact-rule"></div>
+
+            <dl class="hours-list">
+              <div class="hours-row">
+                <dt>Pondělí</dt>
+                <dd>Zavřeno</dd>
+              </div>
+              <div class="hours-row">
+                <dt>Úterý</dt>
+                <dd>16:00 – 23:00</dd>
+              </div>
+              <div class="hours-row">
+                <dt>Středa</dt>
+                <dd>16:00 – 23:00</dd>
+              </div>
+              <div class="hours-row">
+                <dt>Čtvrtek</dt>
+                <dd>16:00 – 23:00</dd>
+              </div>
+              <div class="hours-row">
+                <dt>Pátek</dt>
+                <dd>16:00 – 23:00</dd>
+              </div>
+              <div class="hours-row">
+                <dt>Sobota</dt>
+                <dd>16:00 – 23:00</dd>
+              </div>
+              <div class="hours-row">
+                <dt>Neděle</dt>
+                <dd>
+                  Zavřeno
+                  <span class="hours-note">· možnost akcí na objednávku</span>
+                </dd>
+              </div>
+            </dl>
+
+            <p class="contact-muted">
+              Pro akce mimo běžnou otevírací dobu nás kontaktujte telefonicky.
+            </p>
+          </section>
+
+          <section class="contact-block" aria-labelledby="contact-info">
+            <h2 id="contact-info" class="contact-h2">Kontakt</h2>
+            <div class="contact-rule"></div>
+
+            <div class="contact-lines">
+              <p>Sokolská třída 244/27</p>
+              <p>Moravská Ostrava, 702 00</p>
+
+              <p>
+                <i class="icofont-phone"></i>
+                <a class="contact-link" href="tel:+420725724242"
+                  >+420 725 724 242</a
+                >
+              </p>
+              <p>
+                <i class="icofont-ui-email"></i>
+                <a class="contact-link" href="mailto:snytarna.ofsit@gmail.com"
+                  >snytarna.ofsit@gmail.com</a
+                >
+              </p>
+            </div>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="tel:+420725724242">Zavolat</a>
+              <a class="btn btn-secondary" href="#mapa">Trasa</a>
+            </div>
+
+            <div class="contact-social">
+              <a
+                class="social-link"
+                href="https://www.facebook.com/snytarna"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="icofont-facebook"></i>Facebook</a
+              >
+
+              <a
+                class="social-link"
+                href="https://www.instagram.com/snytarna/"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="icofont-instagram"></i>Instagram</a
+              >
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="mapa" class="map-section" aria-labelledby="map-title">
+        <div class="container map-head">
+          <h2 id="map-title" class="contact-h2 contact-h2--center">Mapa</h2>
+        </div>
+
+        <div class="map-embed">
+          <iframe
+            title="Mapa – Šnytárna"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.924722462198!2d18.289616677259595!3d49.838817031212876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713e3ef817d1847%3A0x84206e103d57ed17!2zxaBueXTDoXJuYSAtIFBsemXFiHNrw6EgcGl2bmljZQ!5e1!3m2!1scs!2scz!4v1770134258674!5m2!1scs!2scz"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <section
+        id="rezervace"
+        class="reservation-section"
+        aria-labelledby="reservation-title"
+      >
+        <div class="container">
+          <h2 id="reservation-title" class="contact-h2 contact-h2--center">
+            Rezervace
+          </h2>
+          <p class="contact-subtitle">
+            Vyplň rezervaci a my se ozveme zpět s potvrzením.
+          </p>
+
+          <form
+            id="reservationForm"
+            class="reservation-form"
+            action="https://formspree.io/f/xdalndwl"
+            method="POST"
+            novalidate
+          >
+            <label class="hp">
+              Nevyplňovat
+              <input
+                type="text"
+                name="company"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </label>
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nová rezervace – Šnytárna web"
+            />
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Jméno</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                  aria-describedby="reservationError"
+                />
+              </div>
+
+              <div class="field">
+                <label for="phone">Telefon</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  required
+                  aria-describedby="reservationError"
+                />
+              </div>
+
+              <div class="field">
+                <label for="date">Datum</label>
+                <input
+                  id="date"
+                  name="date"
+                  type="date"
+                  required
+                  aria-describedby="reservationError"
+                />
+              </div>
+
+              <div class="field">
+                <label for="time">Čas</label>
+                <select
+                  id="time"
+                  name="time"
+                  required
+                  aria-describedby="reservationError"
+                >
+                  <option value="" selected disabled>Vyber čas</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="people">Počet osob</label>
+                <input
+                  id="people"
+                  name="people"
+                  type="number"
+                  min="1"
+                  max="20"
+                  required
+                  aria-describedby="reservationError"
+                />
+              </div>
+
+              <div class="field field--span">
+                <label for="note">Poznámka (volitelně)</label>
+                <textarea
+                  id="note"
+                  name="note"
+                  rows="3"
+                  placeholder="Poznámky k rezervaci, speciální požadavky apod."
+                  aria-describedby="reservationError"
+                ></textarea>
+              </div>
+            </div>
+
+            <p
+              id="reservationError"
+              class="form-message form-message--error"
+              role="alert"
+              aria-live="assertive"
+              aria-atomic="true"
+              hidden
+            ></p>
+            <p
+              id="reservationSuccess"
+              class="form-message form-message--success"
+              aria-live="polite"
+              aria-atomic="true"
+              hidden
+            ></p>
+
+            <div class="form-actions">
+              <button
+                class="btn btn-primary"
+                id="reservationSubmit"
+                type="submit"
+              >
+                Odeslat rezervaci
+              </button>
+              <a class="btn btn-ghost" href="tel:+420725724242"
+                >Raději zavolám</a
+              >
+            </div>
+
+            <p class="form-footnote">
+              Rezervace je platná až po potvrzení. Pro urgentní rezervace
+              volejte.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <img
+        src="images/snytarna-logo-nav.svg"
+        alt="Šnytárna logo"
+        class="footer-logo"
+        loading="lazy"
+        decoding="async"
+      />
+      <p class="footer-text">Nejlepší čepovaná Plzeň v Ostravě.</p>
+      <img
+        src="images/pilsner.webp"
+        alt="Pilsner Urquell"
+        class="footer-pilsner"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <div>
+      <h3 class="footer-title">Navigace</h3>
+      <ul class="footer-links">
+        <li><a href="/">Úvod</a></li>
+        <li><a href="/menu.html">Menu</a></li>
+        <li><a href="/galerie.html">Galerie</a></li>
+        <li><a href="/kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="footer-title">Kontakt</h3>
+      <ul class="footer-links">
+        <li><a href="tel:+420725724242">+420 725 724 242</a></li>
+        <li>Sokolská tř. 244/27 Ostrava</li>
+        <li>Út–So: 16:00–23:00</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <div class="footer-bottom-left">
+      <small>© <span id="year"></span> Šnytárna. Všechna práva vyhrazena.</small>
+      <small class="footer-credit">
+        Web vytvořil
+        <a href="https://pospiweb.cz" target="_blank" rel="noopener noreferrer">
+          POSPI
+        </a>
+      </small>
+    </div>
+    <div class="footer-legal">
+      <a href="/gdpr.html">GDPR</a>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

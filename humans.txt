@@ -1,0 +1,7 @@
+Site: Šnytárna – Plzeňská pivnice v Ostravě
+Author: POSPI (https://pospiweb.cz)
+Location: Ostrava, Czech Republic
+
+Technology:
+HTML5, CSS3, JavaScript
+Custom build – no templates
