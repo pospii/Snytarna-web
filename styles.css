@@ -258,10 +258,8 @@ a:hover {
     border: 1px solid var(--line);
     background:
         linear-gradient(to bottom, rgba(255, 255, 255, .08), rgba(31, 26, 22, .55)),
-        image-set(
-            url("images/hero-1920.webp") type("image/webp"),
-            url("images/hero-1920.jpg") type("image/jpeg")
-        ) center/cover no-repeat;
+        image-set(url("images/hero-1920.webp") type("image/webp"),
+            url("images/hero-1920.jpg") type("image/jpeg")) center/cover no-repeat;
     min-height: clamp(360px, 55vh, 520px);
     box-shadow: var(--shadow-soft);
     overflow: hidden;
@@ -411,7 +409,7 @@ a:hover {
 }
 
 .feature-media--events {
-    --img: url("/images/zadni-nahled.webp");
+    --img: url("/images/interier-nahled.webp");
 }
 
 
@@ -878,6 +876,109 @@ a:hover {
     white-space: nowrap;
 }
 
+/* ===== MENU MODAL ===== */
+.menu-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+}
+
+.menu-modal.is-open {
+    display: block;
+}
+
+.menu-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.55);
+}
+
+.menu-modal__dialog {
+    position: relative;
+    width: min(560px, calc(100vw - 28px));
+    margin: 10vh auto 0;
+    border-radius: 22px;
+    border: 1px solid rgba(31, 26, 22, 0.18);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+}
+
+.menu-modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    border: 1px solid rgba(31, 26, 22, 0.14);
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.menu-modal__media {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background: rgba(31, 26, 22, 0.04);
+    max-height: 420px;
+}
+
+.menu-modal__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-modal__content {
+    padding: 16px 16px 18px;
+}
+
+.menu-modal__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.menu-modal__weight {
+    color: var(--subtext);
+    font-weight: 700;
+}
+
+.menu-modal__price {
+    font-weight: 900;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.menu-modal__title {
+    margin: 0 0 8px;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+}
+
+.menu-modal__desc {
+    margin: 0;
+    color: var(--subtext);
+    line-height: 1.65;
+}
+
+.food-item[role="button"] {
+    cursor: pointer;
+}
+
+.food-item[role="button"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(184, 131, 47, 0.14);
+    border-radius: 16px;
+}
+
+
 /* =========================
    CONTACT PAGE
 ========================= */
@@ -1042,6 +1143,34 @@ a:hover {
     color: var(--text);
 }
 
+.contact-photo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-photo img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-soft);
+    display: block;
+    transition: transform .2s ease;
+}
+
+.contact-photo img:hover {
+    transform: scale(1.03);
+}
+
+.contact-photo-caption {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
 
 .reservation-section {
     padding: 70px 0;
@@ -1100,15 +1229,12 @@ a:hover {
     max-width: 100%;
     box-sizing: border-box;
 
-    /* iOS/Safari: donuť ho být “textovější” */
     -webkit-appearance: none;
     appearance: none;
 
-    /* zarovná výšku s ostatními */
     height: 50px;
     line-height: 1.2;
 
-    /* aby se vnitřní UI nerozjelo */
     padding-right: 12px;
 }
 
@@ -1377,154 +1503,151 @@ a:hover {
 
 /* ===== 404 PAGE ===== */
 
-.error-page{
-  display: flex;
-  min-height: 100vh;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,.05),
-    rgba(31,26,22,.05)
-  );
+.error-page {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, .05),
+            rgba(31, 26, 22, .05));
 }
 
-.error-404{
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  text-align: center;
+.error-404 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-.error-inner{
-  max-width: 720px;
+.error-inner {
+    max-width: 720px;
 }
 
-.error-code{
-  font-size: clamp(80px, 14vw, 160px);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  color: rgba(31,26,22,.08);
-  line-height: 1;
-  margin-bottom: 10px;
+.error-code {
+    font-size: clamp(80px, 14vw, 160px);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: rgba(31, 26, 22, .08);
+    line-height: 1;
+    margin-bottom: 10px;
 }
 
-.error-title{
-  font-size: clamp(28px, 5vw, 40px);
-  margin-bottom: 16px;
+.error-title {
+    font-size: clamp(28px, 5vw, 40px);
+    margin-bottom: 16px;
 }
 
-.error-text{
-  font-size: 18px;
-  color: var(--subtext);
-  margin-bottom: 28px;
-  line-height: 1.6;
+.error-text {
+    font-size: 18px;
+    color: var(--subtext);
+    margin-bottom: 28px;
+    line-height: 1.6;
 }
 
-.error-actions{
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
+.error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
 }
 
 /* GDPR / legal page  */
 
 .legal {
-  padding: 44px 0 64px;
+    padding: 44px 0 64px;
 }
 
 .legal-container {
-  max-width: 980px;
+    max-width: 980px;
 }
 
 .legal-head {
-  margin-bottom: 26px;
+    margin-bottom: 26px;
 }
 
 .legal-kicker {
-  margin: 0 0 10px;
-  color: var(--subtext);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-size: 13px;
+    margin: 0 0 10px;
+    color: var(--subtext);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 .legal-title {
-  margin: 0;
-  font-size: clamp(34px, 3.6vw, 56px);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+    margin: 0;
+    font-size: clamp(34px, 3.6vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
 }
 
 .legal-lead {
-  margin: 12px 0 0;
-  max-width: 70ch;
-  color: var(--subtext);
-  font-size: 17px;
-  line-height: 1.7;
+    margin: 12px 0 0;
+    max-width: 70ch;
+    color: var(--subtext);
+    font-size: 17px;
+    line-height: 1.7;
 }
 
 .legal-card {
-  margin-top: 16px;
-  padding: 18px 18px;
-  border-radius: 18px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: var(--shadow-tiny);
+    margin-top: 16px;
+    padding: 18px 18px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: var(--shadow-tiny);
 }
 
 .legal-card h2 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  letter-spacing: -0.01em;
+    margin: 0 0 10px;
+    font-size: 20px;
+    letter-spacing: -0.01em;
 }
 
 .legal-card p {
-  margin: 10px 0;
-  color: var(--text);
-  line-height: 1.75;
+    margin: 10px 0;
+    color: var(--text);
+    line-height: 1.75;
 }
 
 .legal-list {
-  margin: 10px 0 0;
-  padding-left: 18px;
+    margin: 10px 0 0;
+    padding-left: 18px;
 }
 
 .legal-list li {
-  margin: 6px 0;
-  color: var(--text);
-  line-height: 1.7;
+    margin: 6px 0;
+    color: var(--text);
+    line-height: 1.7;
 }
 
 .legal-note {
-  color: var(--subtext);
-  font-size: 15px;
+    color: var(--subtext);
+    font-size: 15px;
 }
 
 .legal-foot {
-  margin-top: 26px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
-  align-items: center;
+    margin-top: 26px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .legal-back {
-  color: var(--text);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-  font-weight: 700;
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    font-weight: 700;
 }
 
 .legal-updated {
-  margin: 0;
-  color: var(--subtext);
-  font-size: 14px;
+    margin: 0;
+    color: var(--subtext);
+    font-size: 14px;
 }
-

@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const successEl = document.querySelector("#reservationSuccess");
 
   const OPEN_DAYS = new Set([2, 3, 4, 5, 6]); // Út–So
-  const MIN_LEAD_HOURS = 3;
+  const MIN_LEAD_HOURS = 4;
 
-  // Rozsah časů pro příchod: 16:00–20:00 po 15 min
+  // Rozsah časů pro příchod: 16:00–19:00 po 15 min
   const START_H = 16;
-  const END_H = 20; // včetně 20:00
+  const END_H = 19; // včetně 19:00
   const STEP_MIN = 15;
 
   function showError(msg) {
@@ -187,10 +187,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isToday) {
       const minTimeToday = getMinAllowedTimeForToday();
-      // když už dneska nejde (min > 20:00), nabídni nejbližší otevřený den
+      // když už dneska nejde (min > END_H), nabídni nejbližší otevřený den
       if (minutesOfDay(minTimeToday) > END_H * 60) {
         showError(
-          "Na dnešek už to nevychází (min. 3 hodiny předem). Vyber prosím jiný den.",
+          `Na dnešek už to nevychází (min. ${MIN_LEAD_HOURS} hodiny předem). Vyber prosím jiný den.`,
         );
         dateEl.value = "";
         timeEl.innerHTML = `<option value="" selected disabled>Nejdřív vyber datum</option>`;
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       populateTimeOptions(minTimeToday);
     } else {
-      populateTimeOptions(null); // plná nabídka 16:00–20:00
+      populateTimeOptions(null); // plná nabídka 16:00–19:00
     }
   });
 
@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!time) return "Vyber prosím čas.";
     if (!peopleRaw) return "Zadej prosím počet osob.";
     if (!Number.isInteger(people)) return "Zadej prosím platný počet osob.";
-    if (people < 1) return "Zadej prosím počet osob.";
+    if (people < 4) return "Rezervace musí být minimálně pro 4 osoby.";
     if (people > 20)
       return "Rezervace přes 20 osob řešíme individuálně. Zavolej nám prosím.";
     return null;
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!d || !dt) return "Zkontroluj prosím datum a čas.";
     if (!isAllowedTimeSlot(timeEl.value)) {
-      return "Vyber prosím čas v intervalu 16:00–20:00 (po 15 minutách).";
+      return "Vyber prosím čas v intervalu 16:00–19:00 (po 15 minutách).";
     }
 
     // 1) minulost (nejdřív základ)
@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (res.ok) {
         form.reset();
         timeEl.innerHTML = `<option value="" selected disabled>Nejdřív vyber datum</option>`;
-        showSuccess("Rezervace byla odeslána. Ozveme se zpět s potvrzením.");
+        showSuccess("Rezervace byla odeslána. Ozveme se na uvedený telefon zpět s potvrzením rezervace.");
       } else {
         showError(
           "Nepovedlo se odeslat rezervaci. Zkus to prosím znovu, nebo zavolej.",
