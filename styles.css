@@ -711,16 +711,43 @@ a:hover {
     color: var(--subtext);
 }
 
-.footer-credit a {
-    color: var(--subtext);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    transition: all 0.2s ease-in-out;
+.pospi-link {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    line-height: 1.2;
+    padding-bottom: 1.5px;
 }
 
-.footer-credit a:hover {
-    color: var(--text);
-    text-decoration: dotted underline;
+.pospi-link::after,
+.pospi-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    pointer-events: none;
+}
+
+.pospi-link::after {
+    width: 100%;
+    background: rgba(184, 131, 47, 0.38);
+    z-index: 0;
+}
+
+.pospi-link::before {
+    width: 0;
+    background: var(--accent-2);
+    transition: width 0.35s ease;
+    z-index: 1;
+}
+
+.pospi-link:hover::before,
+.pospi-link:focus-visible::before {
+    width: 100%;
 }
 
 .footer-legal {
