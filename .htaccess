@@ -1,0 +1,60 @@
+RewriteEngine On
+
+# Force HTTPS + remove WWW
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.snytarna\.cz [NC]
+RewriteRule ^ https://snytarna.cz%{REQUEST_URI} [R=301,L]
+
+# index.html → /
+RewriteRule ^index\.html$ / [R=301,L]
+
+# pretty URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(menu|kontakt|galerie)/?$ $1.html [L]
+
+ErrorDocument 404 /404.html
+
+
+# cele domeny (aliasy)
+
+RewriteCond %{REQUEST_URI} !^domains/
+
+RewriteCond %{REQUEST_URI} !^/domains/
+
+RewriteCond %{HTTP_HOST} ^(www\.)?(.*)$
+
+RewriteCond %{DOCUMENT_ROOT}/domains/%2 -d
+
+RewriteRule (.*) domains/%2/$1 [DPI]
+
+
+
+# subdomeny (s nebo bez www na zacatku)
+
+RewriteCond %{REQUEST_URI} !^subdom/
+
+RewriteCond %{REQUEST_URI} !^/subdom/
+
+RewriteCond %{HTTP_HOST} ^(www\.)?(.*)\.([^\.]*)\.([^\.]*)$
+
+RewriteCond %{DOCUMENT_ROOT}/subdom/%2 -d
+
+RewriteRule (.*) subdom/%2/$1 [DPI]
+
+
+
+# aliasy - spravne presmerovani pri chybejicim /
+
+RewriteCond %{REQUEST_FILENAME} -d
+
+RewriteRule ^domains/[^/]+/(.+[^/])$ /$1/ [R]
+
+
+
+# subdomeny - spravne presmerovani pri chybejicim /
+
+RewriteCond %{REQUEST_FILENAME} -d
+
+RewriteRule ^subdom/[^/]+/(.+[^/])$ /$1/ [R]
+
