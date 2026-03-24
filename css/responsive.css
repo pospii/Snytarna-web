@@ -116,14 +116,25 @@
 
 
 
+    .hero-card--center {
+        padding-bottom: 200px;
+    }
+
     .hero-meta--center {
         left: 18px;
         right: 18px;
         bottom: 16px;
+        gap: 6px;
     }
 
     .hero-meta--center .meta-item {
-        min-width: 140px;
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    .hero-kicker--center {
+        margin-bottom: 16px;
+        font-size: 20px;
     }
 
     .header-cta {
