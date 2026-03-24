@@ -344,6 +344,11 @@ a:hover {
     font-weight: 700;
 }
 
+.no-pets-icon {
+    display: block;
+    margin: 0 auto 2px;
+}
+
 
 .section {
     padding: 70px 0;
